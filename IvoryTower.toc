@@ -3,5 +3,6 @@
 ## Version: 0.1
 
 IvoryTower.lua
+IvoryTower_CastingBarFrame.lua
 IvoryTower_MainMenuBar.lua
 IvoryTower_PetActionBarFrame.lua
