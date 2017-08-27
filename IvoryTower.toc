@@ -4,3 +4,4 @@
 
 IvoryTower.lua
 IvoryTower_MainMenuBar.lua
+IvoryTower_PetActionBarFrame.lua
