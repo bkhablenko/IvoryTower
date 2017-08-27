@@ -3,3 +3,4 @@
 ## Version: 0.1
 
 IvoryTower.lua
+IvoryTower_MainMenuBar.lua
