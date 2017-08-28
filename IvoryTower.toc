@@ -4,5 +4,6 @@
 
 IvoryTower.lua
 IvoryTower_CastingBarFrame.lua
+IvoryTower_FramerateLabel.lua
 IvoryTower_MainMenuBar.lua
 IvoryTower_PetActionBarFrame.lua
