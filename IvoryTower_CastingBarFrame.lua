@@ -1,3 +1,13 @@
+local function ApplyCastingBarTextures()
+    for _, v in pairs({"Border", "Flash"}) do
+        local texture = CastingBarFrame[v]
+        texture:SetWidth(512)
+        texture:SetTexture("Interface\\AddOns\\IvoryTower\\Media\\Textures\\UI-CastingBar-" .. v)
+    end
+    CastingBarFrame:SetWidth(320)
+end
+ApplyCastingBarTextures()
+
 local function ShowCastingBarIcon(size)
     local icon = CastingBarFrame.Icon
 
