@@ -2,6 +2,8 @@
 ## Title: |cfffffff0Ivory|rTower
 ## Version: 0.1
 
+IvoryTower_TargetFrameClassIcon.xml
+
 IvoryTower.lua
 IvoryTower_AlertFrame.lua
 IvoryTower_CastingBarFrame.lua

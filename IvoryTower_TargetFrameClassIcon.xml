@@ -1,0 +1,37 @@
+<Ui>
+    <Frame name="$parentClassIcon" parent="TargetFrame" parentKey="classIcon">
+        <Size x="24" y="24"/>
+        <Anchors>
+            <Anchor point="CENTER" relativeTo="$parentNameBackground" relativePoint="RIGHT" x="0" y="12"/>
+        </Anchors>
+        <Layers>
+            <Layer level="BORDER">
+                <Texture name="$parentBorder" file="Interface\UNITPOWERBARALT\WowUI_Circular_Frame" parentKey="Border">
+                    <Size x="48" y="48"/>
+                    <Anchors>
+                        <Anchor point="CENTER"/>
+                    </Anchors>
+                </Texture>
+            </Layer>
+            <Layer level="ARTWORK">
+                <Texture name="$parentTexture" file="Interface\TARGETINGFRAME\UI-Classes-Circles" parentKey="Texture"/>
+            </Layer>
+        </Layers>
+        <Scripts>
+            <OnLoad>
+                self:RegisterEvent("PLAYER_TARGET_CHANGED")
+            </OnLoad>
+            <OnEvent>
+                if (event == "PLAYER_TARGET_CHANGED") then
+                    if (UnitIsPlayer("target")) then
+                        local coords = CLASS_ICON_TCOORDS[select(2, UnitClass("target"))]
+                        self.Texture:SetTexCoord(unpack(coords))
+                        self:Show()
+                    else
+                        self:Hide()
+                    end
+                end
+            </OnEvent>
+        </Scripts>
+    </Frame>
+</Ui>
