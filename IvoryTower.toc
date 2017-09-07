@@ -9,5 +9,6 @@ IvoryTower_AlertFrame.lua
 IvoryTower_CastingBarFrame.lua
 IvoryTower_FramerateLabel.lua
 IvoryTower_MainMenuBar.lua
+IvoryTower_Minimap.lua
 IvoryTower_PetActionBarFrame.lua
 IvoryTower_TalkingHeadFrame.lua
