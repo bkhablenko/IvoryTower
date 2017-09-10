@@ -1,3 +1,5 @@
+local _, IvoryTower = ...
+
 local function ApplyCastingBarTextures()
     for _, v in pairs({"Border", "Flash"}) do
         local texture = CastingBarFrame[v]
@@ -36,13 +38,25 @@ local function CreateCastingBarTimer()
 end
 CreateCastingBarTimer()
 
-UIPARENT_MANAGED_FRAME_POSITIONS["CastingBarFrame"] = {
-    baseY = 16,
-    bottomEither = MultiBarBottomLeft:GetHeight() + 4,
-    bottomRight = MultiBarBottomRight:GetHeight() + 4,
-    maxLevel = -16,
-    pet = PetActionBarFrame:GetHeight(),
-    talkingHeadFrame = TalkingHeadFrame:GetHeight(),
-    watchBar = 10,
-    yOffset = 96
-}
+hooksecurefunc("UIParent_ManageFramePositions", function ()
+    if (InCombatLockdown()) then
+        return
+    end
+
+    local yOffset = 32
+
+    for _, actionBar in pairs({MultiBarBottomLeft, MultiBarBottomRight}) do
+        yOffset = yOffset + (actionBar:IsShown() and (actionBar:GetHeight() + 4) or 0)
+    end
+
+    if (PetActionBarFrame:IsShown()) then
+        yOffset = yOffset + PetActionBarFrame:GetHeight()
+    end
+
+    if (TalkingHeadFrame:IsShown()) then
+        yOffset = yOffset + TalkingHeadFrame:GetHeight()
+    end
+
+    CastingBarFrame:ClearAllPoints()
+    CastingBarFrame:SetPoint("BOTTOM", MainMenuBar, "TOP", 0, yOffset)
+end)

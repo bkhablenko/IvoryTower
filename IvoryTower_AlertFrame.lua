@@ -1,15 +1,24 @@
 -- /run MoneyWonAlertSystem:AddAlert(815)
 
-AlertFrame:ClearAllPoints()
-AlertFrame:SetPoint("BOTTOM", UIParent)
+hooksecurefunc("UIParent_ManageFramePositions", function ()
+    if (InCombatLockdown()) then
+        return
+    end
 
-UIPARENT_MANAGED_FRAME_POSITIONS["AlertFrame"] = {
-    baseY = 16,
-    bottomEither = MultiBarBottomLeft:GetHeight() + 4,
-    bottomRight = MultiBarBottomRight:GetHeight() + 4,
-    maxLevel = -16,
-    pet = PetActionBarFrame:GetHeight(),
-    talkingHeadFrame = TalkingHeadFrame:GetHeight(),
-    watchBar = 10,
-    yOffset = 48
-}
+    local yOffset = -12
+
+    for _, actionBar in pairs({MultiBarBottomLeft, MultiBarBottomRight}) do
+        yOffset = yOffset + (actionBar:IsShown() and (actionBar:GetHeight() + 4) or 0)
+    end
+
+    if (PetActionBarFrame:IsShown()) then
+        yOffset = yOffset + PetActionBarFrame:GetHeight()
+    end
+
+    if (TalkingHeadFrame:IsShown()) then
+        yOffset = yOffset + TalkingHeadFrame:GetHeight()
+    end
+
+    AlertFrame:ClearAllPoints()
+    AlertFrame:SetPoint("BOTTOM", MainMenuBar, "TOP", 0, yOffset)
+end)

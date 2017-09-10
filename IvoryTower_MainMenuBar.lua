@@ -1,3 +1,5 @@
+local _, IvoryTower = ...
+
 local function HideMainMenuBarTextures()
     MainMenuBarLeftEndCap:Hide()
     MainMenuBarRightEndCap:Hide()
@@ -27,6 +29,11 @@ MultiBarBottomRight:SetPoint("BOTTOM", MultiBarBottomLeft, "TOP", 0, 4)
 MainMenuBarBackpackButton:ClearAllPoints()
 MainMenuBarBackpackButton:SetPoint("BOTTOMRIGHT", MainMenuMicroButton, "TOPRIGHT", 0, -12)
 
+MainMenuBarVehicleLeaveButton:HookScript("OnShow", function (self)
+    self:ClearAllPoints()
+    self:SetPoint("BOTTOMLEFT", CharacterMicroButton, "TOPLEFT", 0, -12)
+end)
+
 MainMenuTrackingBar_Configure = function (watchBar, onTop)
     local statusBar = watchBar.StatusBar
     statusBar:SetFrameLevel(MainMenuBarArtFrame:GetFrameLevel() - 1)
@@ -45,9 +52,21 @@ MainMenuTrackingBar_Configure = function (watchBar, onTop)
     end
 end
 
-UIPARENT_MANAGED_FRAME_POSITIONS["MainMenuBar"] = {
-    baseY = 16,
-    maxLevel = -16,
-    watchBar = 10,
-    yOffset = 12
-}
+hooksecurefunc("UIParent_ManageFramePositions", function ()
+    if (InCombatLockdown()) then
+        return
+    end
+
+    local yOffset = 12
+
+    if (not MainMenuBarMaxLevelBar:IsShown()) then
+        yOffset = yOffset + 16
+    end
+
+    if (IvoryTower:GetWatchBarCount() > 1) then
+        yOffset = yOffset + 10
+    end
+
+    MainMenuBar:ClearAllPoints()
+    MainMenuBar:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, yOffset)
+end)

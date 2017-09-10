@@ -1,9 +1,16 @@
-UIPARENT_MANAGED_FRAME_POSITIONS["TalkingHeadFrame"] = {
-    baseY = 16,
-    bottomEither = MultiBarBottomLeft:GetHeight() + 4,
-    bottomRight = MultiBarBottomRight:GetHeight() + 4,
-    maxLevel = -16,
-    pet = PetActionBarFrame:GetHeight(),
-    watchBar = 10,
-    yOffset = 64
-}
+local _, IvoryTower = ...
+
+hooksecurefunc("UIParent_ManageFramePositions", function ()
+    local yOffset = 0
+
+    for _, actionBar in pairs({MultiBarBottomLeft, MultiBarBottomRight}) do
+        yOffset = yOffset + (actionBar:IsShown() and (actionBar:GetHeight() + 4) or 0)
+    end
+
+    if (PetActionBarFrame:IsShown()) then
+        yOffset = yOffset + PetActionBarFrame:GetHeight()
+    end
+
+    TalkingHeadFrame:ClearAllPoints()
+    TalkingHeadFrame:SetPoint("BOTTOM", MainMenuBar, "TOP", 0, yOffset)
+end)
