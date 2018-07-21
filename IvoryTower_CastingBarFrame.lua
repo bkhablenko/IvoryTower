@@ -38,25 +38,25 @@ local function CreateCastingBarTimer()
 end
 CreateCastingBarTimer()
 
-hooksecurefunc("UIParent_ManageFramePositions", function ()
-    if (InCombatLockdown()) then
-        return
-    end
+-- hooksecurefunc("UIParent_ManageFramePositions", function ()
+--     -- if (InCombatLockdown()) then
+--     --     return
+--     -- end
 
-    local yOffset = 32
+--     local yOffset = 32
 
-    for _, actionBar in pairs({MultiBarBottomLeft, MultiBarBottomRight}) do
-        yOffset = yOffset + (actionBar:IsShown() and (actionBar:GetHeight() + 4) or 0)
-    end
+--     for _, actionBar in pairs({MultiBarBottomLeft, MultiBarBottomRight}) do
+--         yOffset = yOffset + (actionBar:IsShown() and (actionBar:GetHeight() + 4) or 0)
+--     end
 
-    if (PetActionBarFrame:IsShown()) then
-        yOffset = yOffset + PetActionBarFrame:GetHeight()
-    end
+--     if (PetActionBarFrame:IsShown()) then
+--         yOffset = yOffset + PetActionBarFrame:GetHeight()
+--     end
 
-    if (TalkingHeadFrame:IsShown()) then
-        yOffset = yOffset + TalkingHeadFrame:GetHeight()
-    end
+--     if (TalkingHeadFrame:IsShown()) then
+--         yOffset = yOffset + TalkingHeadFrame:GetHeight()
+--     end
 
-    CastingBarFrame:ClearAllPoints()
-    CastingBarFrame:SetPoint("BOTTOM", MainMenuBar, "TOP", 0, yOffset)
-end)
+--     CastingBarFrame:ClearAllPoints()
+--     CastingBarFrame:SetPoint("BOTTOM", MainMenuBar, "TOP", 0, yOffset)
+-- end)
