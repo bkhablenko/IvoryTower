@@ -1,0 +1,5 @@
+<Bindings>
+    <Binding name="IVORYTOWER_RELOADUI" header="IVORYTOWER" category="ADDONS">
+        ReloadUI()
+    </Binding>
+</Bindings>

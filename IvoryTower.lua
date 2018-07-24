@@ -9,3 +9,6 @@ local _, IvoryTower = ...
 -- end
 
 -- LoadAddOn("Blizzard_TalkingHeadUI")
+
+BINDING_HEADER_IVORYTOWER = "IvoryTower"
+BINDING_NAME_IVORYTOWER_RELOADUI = "Reload UI"
