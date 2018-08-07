@@ -12,3 +12,9 @@ local _, IvoryTower = ...
 
 BINDING_HEADER_IVORYTOWER = "IvoryTower"
 BINDING_NAME_IVORYTOWER_RELOADUI = "Reload UI"
+
+SLASH_PRINT1 = "/print"
+SlashCmdList["PRINT"] = function (script)
+    script = string.format("print(%s)", script)
+    RunScript(script)
+end
