@@ -2,6 +2,8 @@
 ## Title: |cfffffff0Ivory|rTower
 ## Notes: Enhances the default UI according to personal preferences.
 ## Version: 0.1
+## Dependencies: Blizzard_TalkingHeadUI
+## OptionalDeps: MoveTalkingHead
 
 IvoryTower_TargetFrameClassIcon.xml
 

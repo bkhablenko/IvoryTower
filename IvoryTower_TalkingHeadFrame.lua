@@ -14,3 +14,19 @@ local _, IvoryTower = ...
 --     TalkingHeadFrame:ClearAllPoints()
 --     TalkingHeadFrame:SetPoint("BOTTOM", MainMenuBar, "TOP", 0, yOffset)
 -- end)
+
+if IsAddOnLoaded("MoveTalkingHead") then
+    IvoryTower:Debug("Using MoveTalkingHead")
+    return
+end
+
+TalkingHeadFrame:ClearAllPoints()
+TalkingHeadFrame:SetPoint("TOP", UIParent, "TOP", 0, -96)
+TalkingHeadFrame.SetPoint = function () end
+
+for i, alertFrameSubSystem in ipairs(AlertFrame.alertFrameSubSystems) do
+    if alertFrameSubSystem.anchorFrame == TalkingHeadFrame then
+        tremove(AlertFrame.alertFrameSubSystems, i)
+        return
+    end
+end
