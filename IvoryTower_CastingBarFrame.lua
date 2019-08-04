@@ -38,6 +38,26 @@ local function CreateCastingBarTimer()
 end
 CreateCastingBarTimer()
 
+-- actionBarOffset
+-- UIPARENT_MANAGED_FRAME_POSITIONS["CastingBarFrame"].bottomRight = 45
+
+-- ## OptionalDeps: Dominos, MoveTalkingHead
+
+if (IsAddOnLoaded("Dominos")) then
+    CastingBarFrame.ignoreFramePositionManager = true
+
+    CastingBarFrame:ClearAllPoints()
+    CastingBarFrame:SetPoint("BOTTOM", WorldFrame, "BOTTOM", 0, 180)
+
+    CastingBarFrame.SetPoint = function ()
+        IvoryTower:Debug("CastingBarFrame has a fixed position")
+    end
+end
+
+-- CastingBarFrame:ClearAllPoints()
+-- CastingBarFrame:SetPoint("BOTTOM", WorldFrame, "BOTTOM", 0, 180)
+-- CastingBarFrame.SetPoint = function () end
+
 -- hooksecurefunc("UIParent_ManageFramePositions", function ()
 --     -- if (InCombatLockdown()) then
 --     --     return

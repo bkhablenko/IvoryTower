@@ -1,9 +1,9 @@
-## Interface: 80000
+## Interface: 80200
 ## Title: |cfffffff0Ivory|rTower
 ## Notes: Enhances the default UI according to personal preferences.
 ## Version: 0.1
 ## Dependencies: Blizzard_TalkingHeadUI
-## OptionalDeps: MoveTalkingHead
+## OptionalDeps: Dominos, MoveTalkingHead
 
 IvoryTower_TargetFrameClassIcon.xml
 

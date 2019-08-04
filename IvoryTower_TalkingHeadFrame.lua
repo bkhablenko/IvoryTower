@@ -21,7 +21,7 @@ if IsAddOnLoaded("MoveTalkingHead") then
 end
 
 TalkingHeadFrame:ClearAllPoints()
-TalkingHeadFrame:SetPoint("TOP", UIParent, "TOP", 0, -96)
+TalkingHeadFrame:SetPoint("TOP", WorldFrame, "TOP", 0, -24)
 TalkingHeadFrame.SetPoint = function () end
 
 for i, alertFrameSubSystem in ipairs(AlertFrame.alertFrameSubSystems) do

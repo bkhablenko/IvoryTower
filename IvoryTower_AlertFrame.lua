@@ -22,3 +22,7 @@
 --     AlertFrame:ClearAllPoints()
 --     AlertFrame:SetPoint("BOTTOM", MainMenuBar, "TOP", 0, yOffset)
 -- end)
+
+AlertFrame:ClearAllPoints()
+AlertFrame:SetPoint("BOTTOM", UIParent, "BOTTOM", 0, 150)
+AlertFrame.SetPoint = function () end
