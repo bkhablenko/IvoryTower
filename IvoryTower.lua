@@ -1,13 +1,5 @@
 local _, IvoryTower = ...
 
--- IvoryTower.GetWatchBarCount = function ()
---     local result = 0
---     for _, watchBar in pairs({ArtifactWatchBar, HonorWatchBar, ReputationWatchBar}) do
---         result = result + (watchBar:IsShown() and 1 or 0)
---     end
---     return result
--- end
-
 local DEBUG_ENABLED = true
 
 function IvoryTower:Debug(message)
