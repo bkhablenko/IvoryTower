@@ -1,3 +1,5 @@
+local _, IvoryTower = ...
+
 Minimap:EnableMouseWheel(true)
 Minimap:HookScript("OnMouseWheel", function (self, delta)
     if (delta > 0) then

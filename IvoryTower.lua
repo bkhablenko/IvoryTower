@@ -16,3 +16,9 @@ SlashCmdList["PRINT"] = function (script)
     script = string.format("print(%s)", script)
     RunScript(script)
 end
+
+SLASH_QUEST1 = "/quest"
+SlashCmdList["QUEST"] = function (questID)
+    status = C_QuestLog.IsQuestFlaggedCompleted(questID) and "|cff80ff80completed" or "|cffff8080incomplete"
+    ChatFrame1:AddMessage(string.format("Quest %d is %s.", questID, status))
+end

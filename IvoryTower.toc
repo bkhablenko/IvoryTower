@@ -1,15 +1,12 @@
-## Interface: 90005
+## Interface: 20501
 ## Title: |cfffffff0Ivory|rTower
 ## Notes: Enhances the default UI according to personal preferences.
 ## Version: 0.1
-## Dependencies: Blizzard_TalkingHeadUI
-## OptionalDeps: MoveTalkingHead
 
 IvoryTower_TargetFrameClassIcon.xml
 
 IvoryTower.lua
-IvoryTower_AlertFrame.lua
 IvoryTower_CastingBarFrame.lua
 IvoryTower_FramerateLabel.lua
+IvoryTower_MainMenuBar.lua
 IvoryTower_Minimap.lua
-IvoryTower_TalkingHeadFrame.lua
