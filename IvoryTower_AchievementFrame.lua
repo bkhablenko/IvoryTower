@@ -20,7 +20,9 @@ frame:RegisterEvent("ACHIEVEMENT_EARNED")
 frame:RegisterEvent("ADDON_LOADED")
 frame:SetScript("OnEvent", function(self, event, arg1, ...)
     if (event == "ACHIEVEMENT_EARNED") then
-        table.remove(results, GetAchievementCategory(arg1))
+        categoryID = GetAchievementCategory(arg1)
+        IvoryTower:Debug("Achievement earned: |cffffffff" .. arg1)
+        results[categoryID] = nil
         return
     end
     if (event == "ADDON_LOADED" and arg1 == "Blizzard_AchievementUI") then
