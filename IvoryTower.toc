@@ -12,4 +12,5 @@ IvoryTower_AlertFrame.lua
 IvoryTower_CastingBarFrame.lua
 IvoryTower_FramerateLabel.lua
 IvoryTower_Minimap.lua
+IvoryTower_RaidProfiles.lua
 IvoryTower_TalkingHeadFrame.lua
