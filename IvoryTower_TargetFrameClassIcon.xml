@@ -1,5 +1,5 @@
 <Ui>
-    <Frame name="$parentClassIcon" parent="TargetFrame" parentKey="classIcon">
+    <Frame name="$parentClassIcon" parent="TargetFrame" parentKey="classIcon" frameStrata="MEDIUM">
         <Size x="24" y="24"/>
         <Anchors>
             <Anchor point="CENTER" relativeTo="$parentNameBackground" relativePoint="RIGHT" x="0" y="12"/>
